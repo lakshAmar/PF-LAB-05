@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int choice;
+    float weight, height, age, result;
+
+    printf("1=BMI 2=BMR 3=Ideal Weight 4=Heart Rate: ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1:
+            printf("Enter weight(kg) and height(m): ");
+            scanf("%f %f", &weight, &height);
+            if (weight>0 && height>0) {
+                result = weight / pow(height,2);
+                printf("BMI = %.2f\n", result);
+            } else printf("Invalid Input");
+            break;
+
+        case 4:
+            printf("Enter age: ");
+            scanf("%f", &age);
+            if (age>0) {
+                result = (220 - age) * 0.7;
+                printf("Target Heart Rate = %.2f\n", result);
+            } else printf("Invalid Age");
+            break;
+
+        default:
+            printf("Other options simplified.");
+    }
+
+    return 0;
+}
