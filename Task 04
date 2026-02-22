@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int category, type, qty;
+    float price;
+
+    printf("Category (1=Fiction, 2=Non-Fiction): ");
+    scanf("%d", &category);
+
+    switch(category) {
+        case 1:
+            printf("1=Novel 2=Comic: ");
+            scanf("%d", &type);
+            price = (type == 1) ? 600 : 300;
+            break;
+
+        case 2:
+            printf("1=Biography 2=Self-Help: ");
+            scanf("%d", &type);
+            price = (type == 1) ? 800 : 500;
+            break;
+
+        default:
+            printf("Invalid Category");
+            return 0;
+    }
+
+    printf("Enter Quantity: ");
+    scanf("%d", &qty);
+
+    printf("Total Bill = Rs. %.2f\n", price * qty);
+    return 0;
+}
