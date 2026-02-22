@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int cardValid, pinCorrect;
+    float balance, amount;
+
+    printf("Card Valid? (1=Yes,0=No): ");
+    scanf("%d", &cardValid);
+
+    if (cardValid == 1) {
+        printf("PIN Correct? (1=Yes,0=No): ");
+        scanf("%d", &pinCorrect);
+
+        if (pinCorrect == 1) {
+            printf("Enter Balance and Amount: ");
+            scanf("%f %f", &balance, &amount);
+
+            if (amount <= balance)
+                printf("Transaction Successful");
+            else
+                printf("Insufficient Funds");
+        }
+        else
+            printf("Invalid PIN");
+    }
+    else
+        printf("Invalid Card");
+
+    return 0;
+}
