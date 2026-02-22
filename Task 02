@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    float data, bill, rate;
+    int type;
+
+    printf("Enter Data Used (GB): ");
+    scanf("%f", &data);
+
+    printf("Customer Type (1=Prepaid, 2=Postpaid): ");
+    scanf("%d", &type);
+
+    if (data <= 2) {
+        rate = 50;
+    } 
+    else if (data <= 10) {
+        if (type == 1)
+            rate = 40;
+        else
+            rate = 35;
+    } 
+    else {
+        rate = 25;
+    }
+
+    bill = data * rate;
+    printf("Total Bill = Rs. %.2f\n", bill);
+
+    return 0;
+}
